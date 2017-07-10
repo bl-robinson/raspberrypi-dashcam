@@ -22,6 +22,8 @@ class DashCam:
     def run(self):
         try:
             self.cam = picamera.PiCamera()
+            self.cam.hflip = True
+            self.cam.vflip = True
             self.cam.annotate_background = picamera.Color('black')
             self.cam.annotate_text = dt.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
             start_time = dt.datetime.now()
